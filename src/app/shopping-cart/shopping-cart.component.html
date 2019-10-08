@@ -1,7 +1,8 @@
 <mat-grid-list cols="3">
     <ng-container *ngFor="let item of items">
         <mat-grid-tile>
-            <app-article [item]="item"></app-article>
+            <app-article [item]="item"
+                         isInCart="true"></app-article>
         </mat-grid-tile>
     </ng-container>
 </mat-grid-list>

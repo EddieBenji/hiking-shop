@@ -49,6 +49,22 @@ const hikingReducer = createReducer(initialState,
             ...state,
             articlesInShoppingCart: [...articlesInShoppingCart]
         };
+    }),
+    on(appActions.selectItemForShopping, (state: HikingState, { item }) => {
+        const selectedArticleIndex = state.hikingArticles.findIndex((a) => a.id === item.id);
+        const articleUpdated = {
+            ...state.hikingArticles[selectedArticleIndex],
+            isAddedToTheCart: true
+        };
+        const articles = [
+            ...state.hikingArticles.slice(0, selectedArticleIndex),
+            articleUpdated,
+            ...state.hikingArticles.slice(selectedArticleIndex + 1)
+        ];
+        return {
+            ...state,
+            hikingArticles: [...articles]
+        };
     })
 );
 

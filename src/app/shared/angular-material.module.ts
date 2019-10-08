@@ -9,6 +9,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 
 
@@ -22,8 +25,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
         MatMenuModule,
         MatCardModule,
         MatDividerModule,
-        MatGridListModule
-
+        MatGridListModule,
+        MatToolbarModule,
+        MatSnackBarModule
     ],
     exports: [
         MatSidenavModule,
@@ -32,7 +36,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
         MatMenuModule,
         MatCardModule,
         MatDividerModule,
-        MatGridListModule
+        MatGridListModule,
+        MatToolbarModule,
+        MatSnackBarModule
     ]
 })
 export class AngularMaterialModule {
