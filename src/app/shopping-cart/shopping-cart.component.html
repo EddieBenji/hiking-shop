@@ -1,12 +1,7 @@
-
 <mat-grid-list cols="3">
-    <mat-grid-tile>
-        <app-article></app-article>
-    </mat-grid-tile>
-    <mat-grid-tile>
-        <app-article></app-article>
-    </mat-grid-tile>
-    <mat-grid-tile>
-        <app-article></app-article>
-    </mat-grid-tile>
+    <ng-container *ngFor="let item of items">
+        <mat-grid-tile>
+            <app-article [item]="item"></app-article>
+        </mat-grid-tile>
+    </ng-container>
 </mat-grid-list>

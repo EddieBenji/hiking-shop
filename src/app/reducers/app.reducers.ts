@@ -25,7 +25,7 @@ export const initialState: HikingState = {
             'Chaqueta Soft Shell superficies están mejor protegidos contra el frío',
             1204.08, 'Jackets',
             'https://images.pexels.com/photos/2567960/pexels-photo-2567960.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'),
-        new HikingArticle('BVDSKKSN75121SD8',
+        new HikingArticle('IIMDJJSDHJVM784D',
             'YAH Bastones de Senderismo, multifuncionales, con luz LED\n',
             'Especificaciones: 5 secciones de tubos más un mango y otras herramientas (un juego); Peso: alrededor de 1,3 kg; Tamaño: 41 x 1,1 pulgadas (103 cm x 2,8 cm);',
             1480.00, 'Misc',
@@ -36,7 +36,14 @@ export const initialState: HikingState = {
 
 const hikingReducer = createReducer(initialState,
     on(appActions.addItemToShoppingCart, (state: HikingState, { item }) => {
-        const articlesInShoppingCart = state.articlesInShoppingCart;
+        const articlesInShoppingCart = [...state.articlesInShoppingCart];
+        // verify if the items is already added:
+        const foundArticle = articlesInShoppingCart.find((art: HikingArticle) => art.id === item.id);
+        if (foundArticle !== undefined) {
+            // no change in the state then.
+            return state;
+        }
+        // then add it to the array:
         articlesInShoppingCart.push(item);
         return {
             ...state,
