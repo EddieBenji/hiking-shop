@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { select, Store } from '@ngrx/store';
-
-import { AppState } from '../reducers';
 import { Observable } from 'rxjs';
 import { HikingArticle } from '../models/hiking-article.model';
+import { select, Store } from '@ngrx/store';
+import { AppState } from '../reducers';
 
 @Component({
-    selector: 'app-articles',
-    templateUrl: './articles.component.html',
-    styleUrls: ['./articles.component.scss']
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.scss']
 })
-export class ArticlesComponent implements OnInit {
+export class HeaderComponent implements OnInit {
     items$: Observable<HikingArticle[]>;
 
     constructor(private store$: Store<AppState>) {
@@ -18,7 +17,8 @@ export class ArticlesComponent implements OnInit {
 
     ngOnInit() {
         this.items$ = this.store$.pipe(
-            select(state => state.hiking.hikingArticles)
+            select(state => state.hiking.articlesInShoppingCart)
         );
     }
+
 }
