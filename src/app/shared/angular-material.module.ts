@@ -2,17 +2,37 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // Material:
-import { MatSliderModule } from '@angular/material/slider';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatGridListModule } from '@angular/material/grid-list';
+
 
 
 @NgModule({
     declarations: [],
     imports: [
         CommonModule,
-        MatSliderModule
+        MatSidenavModule,
+        MatCheckboxModule,
+        MatButtonModule,
+        MatMenuModule,
+        MatCardModule,
+        MatDividerModule,
+        MatGridListModule
+
     ],
     exports: [
-        MatSliderModule
+        MatSidenavModule,
+        MatCheckboxModule,
+        MatButtonModule,
+        MatMenuModule,
+        MatCardModule,
+        MatDividerModule,
+        MatGridListModule
     ]
 })
 export class AngularMaterialModule {
