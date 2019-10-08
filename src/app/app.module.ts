@@ -10,6 +10,12 @@ import { HomeComponent } from './home/home.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { ArticleComponent } from './articles/article/article.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { StoreModule } from '@ngrx/store';
+import { AppReducer } from './reducers/app.reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { EffectsModule } from '@ngrx/effects';
+import { AppEffects } from './reducers/app.effects';
 
 @NgModule({
     declarations: [
@@ -25,6 +31,14 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
         BrowserAnimationsModule,
         AngularMaterialModule,
         FormsModule,
+        StoreModule.forRoot({ appReducer: AppReducer }, {
+            runtimeChecks: {
+                strictStateImmutability: true,
+                strictActionImmutability: true
+            }
+        }),
+        StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+        EffectsModule.forRoot([AppEffects]),
     ],
     providers: [],
     bootstrap: [AppComponent]
