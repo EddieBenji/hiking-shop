@@ -1,20 +1,16 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="warn">
   <span>
-    <a routerLink="/">Hiking Shop</a>
+    <a routerLink="/home">Hiking Shop</a>
   </span>
     <span class="spacer"></span>
     <ul>
         <li>
             <a mat-button routerLink="/articles">Articles</a>
-
         </li>
         <li>
             <a mat-button
                [ngClass]="{'item-disabled':(items$ | async).length < 1 }"
                routerLink="/cart">Shopping Cart</a>
-        </li>
-        <li>
-            <button mat-button>Logout</button>
         </li>
     </ul>
 </mat-toolbar>

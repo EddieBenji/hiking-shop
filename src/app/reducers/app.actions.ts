@@ -1,6 +1,5 @@
 import { createAction, props } from '@ngrx/store';
 
-
 import { HikingArticle } from '../models/hiking-article.model';
 
 

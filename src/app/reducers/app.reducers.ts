@@ -16,11 +16,11 @@ const hikingReducer = createReducer(initialState,
     on(appActions.getItemsSuccess, (state: HikingState, { items }) => {
         return {
             ...state,
-            hikingArticles: [...items]
+            hikingArticles: [ ...items ]
         };
     }),
     on(appActions.addItemToShoppingCart, (state: HikingState, { item }) => {
-        const articlesInShoppingCart = [...state.itemsToBuy];
+        const articlesInShoppingCart = [ ...state.itemsToBuy ];
         // verify if the items is already added:
         const foundArticle = articlesInShoppingCart.find((art: HikingArticle) => art.id === item.id);
         if (foundArticle !== undefined) {
@@ -31,7 +31,7 @@ const hikingReducer = createReducer(initialState,
         articlesInShoppingCart.push(item);
         return {
             ...state,
-            itemsToBuy: [...articlesInShoppingCart]
+            itemsToBuy: [ ...articlesInShoppingCart ]
         };
     }),
     on(appActions.selectItemForShopping, (state: HikingState, { item }) => {
@@ -47,7 +47,7 @@ const hikingReducer = createReducer(initialState,
         ];
         return {
             ...state,
-            hikingArticles: [...articles]
+            hikingArticles: [ ...articles ]
         };
     })
 );

@@ -7,16 +7,16 @@ import { ShoppingCartGuard } from './shared/guards/shopping-cart.guard';
 
 
 const routes: Routes = [
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: '', redirectTo: '/articles', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'articles', component: ArticlesComponent },
-    { path: 'cart', component: ShoppingCartComponent, canActivate: [ShoppingCartGuard] }
+    { path: 'cart', component: ShoppingCartComponent, canActivate: [ ShoppingCartGuard ] }
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule],
-    providers: [ShoppingCartGuard]
+    imports: [ RouterModule.forRoot(routes) ],
+    exports: [ RouterModule ],
+    providers: [ ShoppingCartGuard ]
 })
 export class AppRoutingModule {
 }

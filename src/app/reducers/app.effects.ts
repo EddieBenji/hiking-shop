@@ -3,7 +3,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 
 import * as actions from '../reducers/app.actions';
 import { HikingArticle } from '../models/hiking-article.model';
-import { map, mergeMap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class AppEffects {
