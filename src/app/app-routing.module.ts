@@ -7,7 +7,7 @@ import { ShoppingCartGuard } from './shared/guards/shopping-cart.guard';
 
 
 const routes: Routes = [
-    { path: '', redirectTo: '/articles', pathMatch: 'full' },
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'articles', component: ArticlesComponent },
     { path: 'cart', component: ShoppingCartComponent, canActivate: [ ShoppingCartGuard ] }
