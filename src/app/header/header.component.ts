@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
 
     ngOnInit() {
         this.items$ = this.store$.pipe(
-            select(state => state.hiking.articlesInShoppingCart)
+            select(state => state.hiking.itemsToBuy)
         );
     }
 

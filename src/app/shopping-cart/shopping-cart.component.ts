@@ -16,7 +16,7 @@ export class ShoppingCartComponent implements OnInit {
 
     ngOnInit() {
         this.store$.pipe(
-            select(state => state.hiking.articlesInShoppingCart)
+            select(state => state.hiking.itemsToBuy)
         ).subscribe((articles) => this.items = articles);
     }
 
