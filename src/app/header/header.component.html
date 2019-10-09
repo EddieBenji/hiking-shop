@@ -1,16 +1,34 @@
-<mat-toolbar color="warn">
+<mat-toolbar color="primary">
   <span>
-    <a routerLink="/home">Hiking Shop</a>
+    <a mat-button
+       matTooltip="Home"
+       routerLink="/home">
+        <mat-icon aria-hidden="false" aria-label="Home">home</mat-icon>
+    </a>
   </span>
     <span class="spacer"></span>
     <ul>
         <li>
-            <a mat-button routerLink="/articles">Articles</a>
+            <a mat-button
+               matTooltip="Articles"
+               matTooltipPosition="before"
+               routerLink="/articles">
+                <mat-icon aria-hidden="false" aria-label="Articles">loyalty</mat-icon>
+            </a>
         </li>
         <li>
             <a mat-button
-               [ngClass]="{'item-disabled':(items$ | async).length < 1 }"
-               routerLink="/cart">Shopping Cart</a>
+               *ngIf="(items$ | async) as items"
+               matTooltip="Shopping Cart"
+               [ngClass]="{'item-disabled':items.length < 1 }"
+               routerLink="/cart">
+                <mat-icon aria-hidden="false" aria-label="Shopping Cart"
+                          [matBadge]="items.length.toString()"
+                          matBadgeOverlap="false"
+                          matBadgeColor="warn">
+                    shopping_cart
+                </mat-icon>
+            </a>
         </li>
     </ul>
 </mat-toolbar>

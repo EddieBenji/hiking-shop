@@ -40,10 +40,10 @@ import { HeaderComponent } from './header/header.component';
             }
         }),
         StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-        EffectsModule.forRoot([AppEffects]),
+        EffectsModule.forRoot([ AppEffects ])
     ],
     providers: [],
-    bootstrap: [AppComponent]
+    bootstrap: [ AppComponent ]
 })
 export class AppModule {
 }

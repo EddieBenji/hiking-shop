@@ -14,11 +14,26 @@
         <p>{{item?.description}}</p>
     </mat-card-content>
     <mat-card-actions *ngIf="!isInCart; else cartOptions">
-        <button mat-button (click)="addItemToShoppingList()">ADD TO CART</button>
+        <button mat-button
+                matTooltipPosition="right"
+                matTooltip="Add to cart"
+                (click)="addItemToShoppingList()">
+            <mat-icon aria-hidden="false" aria-label="Articles">
+                add_shopping_cart
+            </mat-icon>
+        </button>
+
     </mat-card-actions>
     <ng-template #cartOptions>
         <mat-card-actions>
-            <button mat-button (click)="removeItemFromShoppingList()">REMOVE FROM CART</button>
+            <button mat-button
+                    matTooltipPosition="right"
+                    matTooltip="Remove from cart"
+                    (click)="removeItemFromShoppingList()">
+                <mat-icon aria-hidden="false" aria-label="Articles">
+                    remove_shopping_cart
+                </mat-icon>
+            </button>
         </mat-card-actions>
     </ng-template>
 </mat-card>

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 // Material:
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -11,8 +10,9 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-
-
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatBadgeModule } from '@angular/material/badge';
 
 
 @NgModule({
@@ -27,7 +27,11 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
         MatDividerModule,
         MatGridListModule,
         MatToolbarModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatIconModule,
+        MatTooltipModule,
+        MatBadgeModule
+
     ],
     exports: [
         MatSidenavModule,
@@ -38,7 +42,11 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
         MatDividerModule,
         MatGridListModule,
         MatToolbarModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatIconModule,
+        MatTooltipModule,
+        MatBadgeModule
+
     ]
 })
 export class AngularMaterialModule {
