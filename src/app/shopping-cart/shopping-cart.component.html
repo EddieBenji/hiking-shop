@@ -1,4 +1,5 @@
-<mat-grid-list cols="3">
+<mat-grid-list *ngIf="items.length>0; else noItems"
+               cols="3">
     <ng-container *ngFor="let item of items">
         <mat-grid-tile>
             <app-article [item]="item"
@@ -6,3 +7,9 @@
         </mat-grid-tile>
     </ng-container>
 </mat-grid-list>
+
+<ng-template #noItems>
+    <mat-toolbar>
+        <span class="help-info">NO ITEMS IN THE SHOPPING CART</span>
+    </mat-toolbar>
+</ng-template>

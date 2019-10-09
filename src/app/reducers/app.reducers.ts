@@ -34,11 +34,18 @@ const hikingReducer = createReducer(initialState,
             itemsToBuy: [ ...articlesInShoppingCart ]
         };
     }),
-    on(appActions.selectItemForShopping, (state: HikingState, { item }) => {
-        const selectedArticleIndex = state.hikingArticles.findIndex((a) => a.id === item.id);
+    on(appActions.removeItemFromShoppingCart, (state: HikingState, { item }) => {
+        const articlesInShoppingCart = state.itemsToBuy.filter((article: HikingArticle) => article.id !== item.id);
+        return {
+            ...state,
+            itemsToBuy: [ ...articlesInShoppingCart ]
+        };
+    }),
+    on(appActions.selectOrDeselectItemForShopping, (state: HikingState, { articleID, isSelected }) => {
+        const selectedArticleIndex = state.hikingArticles.findIndex((a) => a.id === articleID);
         const articleUpdated = {
             ...state.hikingArticles[selectedArticleIndex],
-            isAddedToTheCart: true
+            isAddedToTheCart: isSelected
         };
         const articles = [
             ...state.hikingArticles.slice(0, selectedArticleIndex),
@@ -48,6 +55,20 @@ const hikingReducer = createReducer(initialState,
         return {
             ...state,
             hikingArticles: [ ...articles ]
+        };
+    }),
+    on(appActions.emptyShoppingCart, (state: HikingState) => {
+        const articlesUpdated = [];
+        state.hikingArticles.forEach((item: HikingArticle) => {
+            articlesUpdated.push({
+                ...item,
+                isAddedToTheCart: false
+            });
+        });
+        // 2. empty the items to buy
+        return {
+            itemsToBuy: [],
+            hikingArticles: [ ...articlesUpdated ]
         };
     })
 );
