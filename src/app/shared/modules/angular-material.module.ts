@@ -13,6 +13,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatListModule } from '@angular/material/list';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { MatBadgeModule } from '@angular/material/badge';
         MatSnackBarModule,
         MatIconModule,
         MatTooltipModule,
-        MatBadgeModule
+        MatBadgeModule,
+        MatListModule
 
     ],
     exports: [
@@ -45,7 +47,8 @@ import { MatBadgeModule } from '@angular/material/badge';
         MatSnackBarModule,
         MatIconModule,
         MatTooltipModule,
-        MatBadgeModule
+        MatBadgeModule,
+        MatListModule
 
     ]
 })

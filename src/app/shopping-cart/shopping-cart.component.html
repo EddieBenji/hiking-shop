@@ -1,3 +1,18 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        <span class="example-spacer"></span>
+        <button class="example-icon"
+                mat-button
+                matTooltipPosition="right"
+                matTooltip="Empty cart"
+                (click)="emptyCart()">
+            <mat-icon aria-hidden="false" aria-label="Articles">
+                delete_sweep
+            </mat-icon>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+
 <mat-grid-list *ngIf="items.length>0; else noItems"
                cols="3">
     <ng-container *ngFor="let item of items">
