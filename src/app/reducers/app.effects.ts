@@ -32,11 +32,12 @@ export class AppEffects {
             'https://cdn.pixabay.com/photo/2017/09/14/17/10/mountain-2749711_960_720.jpg')
     ];
 
-    loadArticles$ = createEffect(() => this.actions$.pipe(
-        ofType(actions.GET_ITEMS_REQUEST),
-        map(() => {
-            return actions.getItemsSuccess({ items: this.articlesFromBackend });
-        })
+    loadArticles$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(actions.GET_ITEMS_REQUEST),
+            map(() => {
+                return actions.getItemsSuccess({ items: this.articlesFromBackend });
+            })
         )
     );
 
